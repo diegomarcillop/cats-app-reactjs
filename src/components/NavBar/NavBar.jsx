@@ -1,22 +1,47 @@
 import React from "react";
-import "./NavBar.css";
+import styled from "styled-components";
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const List = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-top: 20px;
+  padding-right: 16px;
+`;
+
+const NavLink = styled.a`
+  padding-left: 1vh;
+  padding-right: 2vh;
+  text-decoration: none;
+  font-size: 2.1vh;
+  color: #0f0e4e;
+  letter-spacing: 1px;
+`;
 
 function NavBar() {
   return (
     <>
-      <nav>
-        <ul>  
+      <Nav>
+        <List>
           <li>
-            <a href="/"> NUEVO </a>
+            <NavLink href="/"> HOME </NavLink>
           </li>
           <li>
-            <a href="/"> RAZAS </a>
+            <NavLink href="/"> BREEDS </NavLink>
           </li>
           <li>
-            <a href="/"> SUERTE </a>
+            <NavLink href="/"> FAVOURITES </NavLink>
           </li>
-        </ul>
-      </nav>
+          <li>
+            <NavLink href="/"> RANDOM </NavLink>
+          </li>
+        </List>
+      </Nav>
     </>
   );
 }
