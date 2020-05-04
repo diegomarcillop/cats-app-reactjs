@@ -1,5 +1,5 @@
 * {
-    padding:0;
+    padding: 0;
     margin: 0;
 }
 
@@ -7,6 +7,7 @@ body, html {
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+    max-height: 100%;
 }
 
 .cat-list {
@@ -16,6 +17,81 @@ body, html {
     align-content: space-around;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-     padding-left: 10vh;
+    padding-left: 10vh;
     padding-right: 10vh;
+}
+
+.link {
+    padding-left: 1vh;
+    padding-right: 2vh;
+    text-decoration: none;
+    font-size: 2.1vh;
+    color: #0f0e4e;
+    letter-spacing: 1px;
+    margin: 4px;
+}
+
+.link:hover {
+    background-color: rgba(48, 33, 78, 0.911);
+    color: white;
+    transition: all .8s;
+}
+
+button:hover {
+    background: linear-gradient(rgb(70, 63, 128), rgb(32, 40, 109));
+    transition: all .8s;
+}
+
+.img-cat:hover {
+    filter: grayscale(20%);
+    opacity: 0.4; 
+    transition: all .8s;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    height: 100%;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(67, 37, 136, 0.644);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    flex-wrap: nowrap;
+}
+
+.overlay:hover {
+    opacity: 1!important;
+}
+
+.overlay::before, .overlay::after {
+    content: "";
+    background-color: rgb(243, 243, 243);
+    width: 20px;
+    height: 2px;
+    padding-left: 40px;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+}
+
+.overlay::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.overlay::before {
+    top: 0;
+    transform-origin: left;
+}
+
+.overlay:hover::before, .overlay:hover::after {
+    transform: scaleX(1);
 }
