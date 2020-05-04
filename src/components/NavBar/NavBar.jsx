@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -14,31 +16,30 @@ const List = styled.ul`
   padding-right: 16px;
 `;
 
-const NavLink = styled.a`
-  padding-left: 1vh;
-  padding-right: 2vh;
-  text-decoration: none;
-  font-size: 2.1vh;
-  color: #0f0e4e;
-  letter-spacing: 1px;
-`;
-
 function NavBar() {
   return (
     <>
       <Nav>
         <List>
           <li>
-            <NavLink href="/"> HOME </NavLink>
+            <Link to="/" className="link">
+              HOME
+            </Link>
           </li>
           <li>
-            <NavLink href="/"> BREEDS </NavLink>
+            <Link to="/breeds" className="link">
+              BREEDS
+            </Link>
           </li>
           <li>
-            <NavLink href="/"> FAVOURITES </NavLink>
+            <Link to="/" className="link">
+              FAVOURITES
+            </Link>
           </li>
           <li>
-            <NavLink href="/"> RANDOM </NavLink>
+            <Link to="/" className="link">
+              RANDOM
+            </Link>
           </li>
         </List>
       </Nav>
