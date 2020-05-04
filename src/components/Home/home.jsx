@@ -3,7 +3,7 @@ import "./home.css";
 import styled from "styled-components";
 
 const Button = styled.button`
-  margin-top: 12px;
+  margin-top: 20px;
   width: 20vh;
   height: 6vh;
   font-weight: 700;
@@ -16,6 +16,7 @@ const Button = styled.button`
   border: none;
   background: ${(props) =>
     props.primary ? "linear-gradient(#5244AB, #2B3590)" : "black"};
+  transition:  all .8s;
 `;
 
 function Home() {
