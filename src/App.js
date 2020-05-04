@@ -6,6 +6,7 @@ import { GlobalStyles } from "./components/Common/GlobalStyled";
 import Home from "./components/Home/home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Breeds from "./container/Breeds";
+import InfoBreed from "./container/InfoBreed";
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
           <Route path="/breeds" exact>
             <Breeds />
           </Route>
+
+          <Route path="/info/:id" exact>
+            <InfoBreed />
+          </Route>
+
           <GlobalStyles primaryColor />
         </ThemeProvider>
       </Router>
