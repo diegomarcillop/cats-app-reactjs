@@ -12,12 +12,13 @@ const Col = styled.div`
   padding: 4px 2px 4px 2px;
   width: 14vh;
   text-align: center;
+  cursor: pointer;
 `;
 
 const Row = styled.div`
   display: flex;
   flex-direction: Row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;
 
@@ -27,7 +28,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
   background-color: rgb(255, 255, 255);
 
   background-image: url("/img/vector1.png");
@@ -67,8 +68,7 @@ function InfoBreed() {
           <Card>
             <Content>
               <h1>{breed.breed.name}</h1>
-              <br />
-              <hr />
+               
               <p className="text-breed">{breed.breed.description}</p>
 
               <Row>
@@ -97,14 +97,20 @@ function InfoBreed() {
                 </Col>
               </Row>
             </Content>
-            <img
+           <div  className="content-img" style={{
+             width: "46%",
+           }}>
+           <img
+              className="img-breed"
               src={breed.image}
               style={{
-                width: "70vh",
+                width: "100%",
+                height: "100%",
                 whiteSpace: "nowrap",
               }}
               alt="img-info"
             />
+           </div>
           </Card>
         </Container>
       </>
@@ -126,16 +132,20 @@ const Card = styled.div`
   flex-direction: row;
   justify-content: space-between;
   background-color: #f6f3ff;
-  margin: 4vh 20vh 20vh 30vh;
+  margin: 0vh 20vh 20vh 30vh;
   box-shadow: 2px 9px 32px 5px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
 `;
 
 const Content = styled.div`
   flex-direction: row;
-  width: 60vh;
+  width: 50%;
+  height: 100%;  
   flex-wrap: wrap;
-  padding-left: 40px;
-  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 10px;
+
+  padding-top: 20px;
 `;
 
 export default InfoBreed;

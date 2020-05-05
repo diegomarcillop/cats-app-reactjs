@@ -11,12 +11,12 @@ body, html {
     max-height: 100%;
 }
 
-.text-breed{
+.text-breed {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     padding-top: 1vh;
     font-size: 2.6vh;
-    text-align: left;
+    text-align: justify;
 }
 
 .text-breed2 {
@@ -26,11 +26,9 @@ body, html {
     font-size: 2.7vh;
 }
 
-
-.sc-AxgMl h2{  
-    font-size: 2.4vh; 
+.sc-AxgMl h2 {
+    font-size: 2.4vh;
 }
-
 
 .cat-list {
     display: flex;
@@ -66,7 +64,7 @@ button:hover {
 
 .img-cat:hover {
     filter: grayscale(20%);
-    opacity: 0.4; 
+    opacity: 0.4;
     transition: all .8s;
 }
 
@@ -75,7 +73,7 @@ button:hover {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0; 
+    right: 0;
     height: 100%;
     cursor: pointer;
     width: 100%;
@@ -117,3 +115,63 @@ button:hover {
 .overlay:hover::before, .overlay:hover::after {
     transform: scaleX(1);
 }
+
+@supports(object-fit: cover) {
+    .img-breed {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.sc-AxheI {
+    background-color: black;
+}
+
+@media only screen and (max-width: 700px) {
+    .sc-AxheI {
+        width: 100%;
+    }
+    .sc-AxheI {
+        margin: 0px!important;
+        height: auto!important;
+    }
+    .sc-AxgMl {
+        background-image: url("/img/vector2.png")!important;
+        padding-top: 40px;
+        align-items: flex-start!important;
+    }
+    .sc-Axmtr {
+        width: 100%!important;
+    }
+    .content-img img {
+        width: 100%!important;
+        padding: 4vh 10vh 0 10vh!important;
+    }
+    .sc-AxjAm{
+        justify-content: center!important;
+    }
+
+    .home .content{
+        padding: 0px!important;
+        padding-top: 20px!important;
+        width: 70%!important;
+    }
+
+    .img-home{
+        padding-left: 20vh!important;
+        width: 100%!important;
+    }
+    .bkRjbX{
+        padding-right: 0px!important;
+    }
+
+
+}
+
+@media only screen and (max-width: 380px) {
+    .sc-AxhUy { 
+        justify-content: center!important   ;
+    }
+    
+} 

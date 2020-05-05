@@ -38,10 +38,11 @@ function Home() {
         </div>
 
         <img
+        className="img-home"
           src="/img/image2.svg"
           alt="img-home"
           style={{
-            width: "100vh",
+            width: "80vh",
             paddingRight: "20vh",
             paddingBottom: '12vh'
           }}
