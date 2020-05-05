@@ -42,7 +42,7 @@ function Home() {
           src="/img/image2.svg"
           alt="img-home"
           style={{
-            width: "80vh",
+            width: "70vh",
             paddingRight: "20vh",
             paddingBottom: '12vh'
           }}
