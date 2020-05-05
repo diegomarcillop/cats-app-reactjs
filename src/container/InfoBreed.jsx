@@ -3,23 +3,31 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
 
-const Card = styled.div`
+const Col = styled.div`
   display: flex;
+  flex-direction: column;
+  background-color: #f3ecff;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 4px 2px 4px 2px;
+  width: 14vh;
+  text-align: center;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: Row;
+  justify-content: space-around;
   flex-wrap: wrap;
-  width: 70%;
-  height: 80vh;
-  flex-direction: row;
-  margin: 30px 0px 0px 0px;
-  justify-content: center;
-  background-color: #f6f3ff;
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 98vh;
+  height: 96vh;
   display: flex;
   flex-direction: row;
-  justify-content: center; 
+  justify-content: space-around;
+  align-items: flex-end;
   background-color: rgb(255, 255, 255);
 
   background-image: url("/img/vector1.png");
@@ -28,13 +36,8 @@ const Container = styled.div`
   background-repeat: no-repeat;
 `;
 
-const Content = styled.div`
-  width: 50%;
-`;
-
 function InfoBreed() {
   const { id } = useParams();
-
   const apiKey = "e5d8b310-bdb0-42f3-81de-69b9a0cff12f";
   const [breed, setBreed] = useState({});
 
@@ -48,23 +51,57 @@ function InfoBreed() {
           },
         }
       ).then(({ data }) => {
-        console.log(data[0].breeds[0].name);
-        setBreed(data[0]);
+        setBreed({
+          image: data[0].url,
+          breed: data[0].breeds[0],
+        });
       });
     };
     RespAPI();
   }, [id, apiKey]);
 
-  if (breed !== null) {
+  if (breed !== null && breed.breed !== undefined) {
     return (
       <>
         <Container>
           <Card>
-            <Content></Content>
+            <Content>
+              <h1>{breed.breed.name}</h1>
+              <br />
+              <hr />
+              <p className="text-breed">{breed.breed.description}</p>
+
+              <Row>
+                <Col>
+                  <h2>Origin</h2>
+                  <p className="text-breed2">{breed.breed.origin}</p>
+                </Col>
+
+                <Col>
+                  <h2>Life Span</h2>
+                  <p className="text-breed2">{breed.breed.life_span}</p>
+                </Col>
+
+                <Col>
+                  <h2>Adaptability</h2>
+                  <p className="text-breed2">{breed.breed.adaptability}/5</p>
+                </Col>
+                <Col>
+                  <h2>Energy</h2>
+                  <p className="text-breed2">{breed.breed.energy_level}/5</p>
+                </Col>
+
+                <Col>
+                  <h2>Intelligence</h2>
+                  <p className="text-breed2">{breed.breed.intelligence}/5</p>
+                </Col>
+              </Row>
+            </Content>
             <img
-              src={breed.url}
+              src={breed.image}
               style={{
-                width: "50%",
+                width: "70vh",
+                whiteSpace: "nowrap",
               }}
               alt="img-info"
             />
@@ -72,7 +109,33 @@ function InfoBreed() {
         </Container>
       </>
     );
+  } else {
+    return (
+      <div>
+        <p>No se cargaron los datos</p>
+      </div>
+    );
   }
 }
+
+const Card = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 60vh;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f6f3ff;
+  margin: 4vh 20vh 20vh 30vh;
+  box-shadow: 2px 9px 32px 5px rgba(0, 0, 0, 0.24);
+`;
+
+const Content = styled.div`
+  flex-direction: row;
+  width: 60vh;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-top: 40px;
+`;
 
 export default InfoBreed;
