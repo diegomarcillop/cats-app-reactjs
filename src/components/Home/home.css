@@ -20,6 +20,7 @@
     width: 50%;
     height: 60%;
     padding: 0px 20px 20px 100px;  
+    text-align: left;
 }
 
 .home .content h1 {
@@ -27,6 +28,8 @@
     color: rgb(20, 20, 20);
     padding-bottom: 8px;
     font-size: 4.6vh;
+    text-align: left;
+
 }
 
 .home .content p{
@@ -35,4 +38,5 @@
     font-weight: 300;
     font-size: 3.2vh;
     color: rgb(20, 20, 20);
+    text-align: left;
 }

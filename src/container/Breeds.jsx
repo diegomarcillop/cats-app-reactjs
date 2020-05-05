@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Breed from "../components/Breeds/Breed";
-import { breeds } from "./breeds";
+import { breeds } from "./breedsData";
 
 function Breeds() {
   return (
@@ -13,10 +13,7 @@ function Breeds() {
       </BreedsDiv>
     </>
   );
-}
-
- 
-
+} 
 
 const BreedsDiv = styled.div`
   width: 80%;

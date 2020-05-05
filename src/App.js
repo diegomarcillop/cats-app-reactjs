@@ -5,8 +5,8 @@ import NavBar from "./components/NavBar/NavBar";
 import { GlobalStyles } from "./components/Common/GlobalStyled";
 import Home from "./components/Home/home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Breeds from "./container/Breeds";
 import InfoBreed from "./container/InfoBreed";
+import Breeds from "./container/Breeds";
 
 function App() {
   return (

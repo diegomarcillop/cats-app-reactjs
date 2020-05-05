@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.css";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Button = styled.button`
   margin-top: 20px;
@@ -22,7 +23,7 @@ const Button = styled.button`
 function Home() {
   return (
     <>
-      <div className="container">
+    
       <div className="home">
         <div className="content">
           <h1>Find cool things from the best friend </h1>
@@ -31,7 +32,9 @@ function Home() {
             Find pictures of cats that will brighten your day, you can know
             everything about them.
           </p>
-          <Button primary> Start</Button>
+         <Link to="/breeds">
+         <Button primary> Start</Button>
+         </Link>
         </div>
 
         <img
@@ -44,8 +47,7 @@ function Home() {
           }}
         />
       </div>
-     
-      </div>
+      
     </>
   );
 }

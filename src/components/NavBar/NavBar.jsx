@@ -30,12 +30,7 @@ function NavBar() {
             <Link to="/breeds" className="link">
               BREEDS
             </Link>
-          </li>
-          <li>
-            <Link to="/" className="link">
-              FAVOURITES
-            </Link>
-          </li>
+          </li> 
           <li>
             <Link to="/" className="link">
               RANDOM
