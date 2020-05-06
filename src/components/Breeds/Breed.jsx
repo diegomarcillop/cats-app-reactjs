@@ -72,7 +72,7 @@ function Breed({ name, id }) {
 
 const BreedDiv = styled.div`
   position: relative;
-  width: 36vh;
+  width: 32vh;
   height: 30vh;
   margin: 10px 0px 10px 20px;
 `;

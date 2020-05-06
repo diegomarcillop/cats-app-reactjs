@@ -10,7 +10,7 @@ const Col = styled.div`
   border-radius: 20px;
   margin-top: 10px;
   padding: 4px 2px 4px 2px;
-  width: 14vh;
+  width: 18vh;
   text-align: center;
   cursor: pointer;
 `;
@@ -18,7 +18,7 @@ const Col = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: Row;
-  justify-content: space-between;
+  justify-content: space-between; 
   flex-wrap: wrap;
   padding: 0px 14px 0px 14px;
 
@@ -95,10 +95,13 @@ function InfoBreed() {
                   <h2>Energy</h2>
                   <p className="text-breed2">{breed.breed.energy_level}/5</p>
                 </Col>
-
                 <Col>
                   <h2>Intelligence</h2>
                   <p className="text-breed2">{breed.breed.intelligence}/5</p>
+                </Col>
+                <Col>
+                  <h2>Grooming</h2>
+                  <p className="text-breed2">{breed.breed.grooming}/5</p>
                 </Col>
               </Row>
             </Content>
