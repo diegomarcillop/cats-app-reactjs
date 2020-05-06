@@ -8,7 +8,7 @@ const Col = styled.div`
   flex-direction: column;
   background-color: #f3ecff;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 4px 2px 4px 2px;
   width: 14vh;
   text-align: center;
@@ -20,17 +20,19 @@ const Row = styled.div`
   flex-direction: Row;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0px 14px 0px 14px;
+
 `;
 
 const Container = styled.div`
   width: 100%;
   height: 96vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(255, 255, 255);
-
+  background-color: rgb(255, 255, 255); 
   background-image: url("/img/vector1.png");
   background-position: center bottom;
   background-size: contain;
@@ -67,14 +69,17 @@ function InfoBreed() {
         <Container>
           <Card>
             <Content>
-              <h1>{breed.breed.name}</h1>
+              <h1 style={{
+                padding: "0 14px 0 14px",
+                fontSize: "3vh"
+              }}>{breed.breed.name}</h1>
                
               <p className="text-breed">{breed.breed.description}</p>
 
               <Row>
                 <Col>
                   <h2>Origin</h2>
-                  <p className="text-breed2">{breed.breed.origin}</p>
+                  <p className="text-breed2">{breed.breed.country_codes}</p>
                 </Col>
 
                 <Col>
@@ -99,6 +104,7 @@ function InfoBreed() {
             </Content>
            <div  className="content-img" style={{
              width: "46%",
+             display: "flex", 
            }}>
            <img
               className="img-breed"
@@ -125,6 +131,7 @@ function InfoBreed() {
 }
 
 const Card = styled.div`
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 70%;
@@ -142,8 +149,7 @@ const Content = styled.div`
   width: 50%;
   height: 100%;  
   flex-wrap: wrap;
-  padding-left: 20px;
-  padding-right: 10px;
+  margin: 10px; 
 
   padding-top: 20px;
 `;
