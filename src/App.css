@@ -176,15 +176,6 @@ button:hover {
         height: auto!important;
         margin-bottom: 0px!important;
     }
-
-    
-} 
-
-.text-breed{
-    padding: 14px;
-}
-
-@media only screen and (max-width: 380px) {
     .sc-AxhUy {
         justify-content: center !important   ;
     }
@@ -200,4 +191,12 @@ button:hover {
         width: 90%!important;
         margin-bottom: 30px!important;
     }
+
+    
+} 
+
+.text-breed{
+    padding: 14px;
 }
+
+ 
