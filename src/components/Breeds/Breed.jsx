@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import styled from "styled-components";
 import Axios from "axios";
 import { Link } from "react-router-dom";
@@ -31,7 +31,8 @@ function Breed({ name, id }) {
         }
        }>
         <BreedDiv>
-          {breed.url !== undefined ? (
+         <Suspense fallback={<h1>Loading profile...</h1>}>
+         {breed.url !== undefined ? (
             <img
               className="img-cat"
               src={breed.url}
@@ -60,6 +61,7 @@ function Breed({ name, id }) {
               }}
             />
           )}
+         </Suspense>
 
           <div className="overlay">
             <Title>{name}</Title>
@@ -72,7 +74,7 @@ function Breed({ name, id }) {
 
 const BreedDiv = styled.div`
   position: relative;
-  width: 32vh;
+  width: 28vh;
   height: 30vh;
   margin: 10px 0px 10px 20px;
 `;
